@@ -27,13 +27,14 @@ Route::get('/dashboard', function () {
     }
 
     return match ($user['role_id'] ?? null) {
-        1 => redirect()->route('dashboard.admin'),
+        1 => redirect()->route('users.index'),
         2 => redirect()->route('dashboard.teacher'),
         3 => redirect()->route('dashboard.student'),
         default => redirect()->route('login'),
     };
 })->name('dashboard');
 
+/*
 Route::get('/dashboard/admin', function () {
     $user = session('auth_user');
 
@@ -43,7 +44,7 @@ Route::get('/dashboard/admin', function () {
 
     return view('layouts.partials.dashboard-content');
 })->name('dashboard.admin');
-
+*/
 Route::get('/dashboard/teacher', function () {
     $user = session('auth_user');
 
@@ -76,4 +77,10 @@ Route::put('/courses/{course}', [CourseController::class, 'update'])->name('cour
 Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::patch('/courses/{course}/restore', [CourseController::class, 'restore'])->name('courses.restore');
 
+Route::get('/dashboard/admin', [UserController::class, 'index'])->name('users.index');
 Route::post('/users/register', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/update/{user}', [UserController::class, 'show'])->name('users.update'); //show
+Route::put('/users/update', [UserController::class, 'update'])->name('users.edit'); //update
+Route::delete('/users/destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
+Route::patch('/users/restore/{id}', [UserController::class, 'restore'])->name('users.restore');

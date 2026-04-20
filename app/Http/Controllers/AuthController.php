@@ -44,7 +44,7 @@ class AuthController extends Controller
             ]);
 
             return match ($data['user']['role_id'] ?? null) {
-                1 => redirect()->route('dashboard.admin'),
+                1 => redirect()->route('users.index'),
                 2 => redirect()->route('dashboard.teacher'),
                 3 => redirect()->route('dashboard.student'),
                 default => back()->withErrors([
