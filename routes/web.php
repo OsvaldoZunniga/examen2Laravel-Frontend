@@ -84,3 +84,4 @@ Route::put('/users/update', [UserController::class, 'update'])->name('users.edit
 Route::delete('/users/destroy/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 Route::patch('/users/restore/{id}', [UserController::class, 'restore'])->name('users.restore');
+Route::get('/users/inactive', [UserController::class, 'inactive'])->name('users.inactive');

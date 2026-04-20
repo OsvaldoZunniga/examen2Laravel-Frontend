@@ -45,6 +45,11 @@
                             <th>Usuario</th>
                             <th>Numero de telefono</th>
                             <th>Role</th>
+                            <th>
+                                <a href="{{ route('users.inactive') }}" class="btn btn-success">Inactivos</a>
+                                <a href="{{ route('users.index') }}" class="btn btn-info">Activos</a>
+
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -73,6 +78,7 @@
                                     </button>
                                 </form>
                                 @else
+
                                 <form action="{{ route('users.restore', $user['id']) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('PATCH')
@@ -80,6 +86,7 @@
                                         Reactivar
                                     </button>
                                 </form>
+
                                 @endif
 
                             </td>

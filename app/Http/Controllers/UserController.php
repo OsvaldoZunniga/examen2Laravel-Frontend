@@ -30,19 +30,17 @@ class UserController extends Controller
     public function show($id)
     {
         try {
-            // CORRECCIÓN 1: Usar comillas dobles para la interpolación de {$id}
-            // CORRECCIÓN 2: Asegurar que pedimos JSON explícitamente
+
             $response = Http::withToken(session('access_token'))
                 ->acceptJson()
                 ->get(config('services.academy_api.url') . "/api/users/{$id}");
 
             if (!$response->successful()) {
-                // Si la API falla, aquí verás el error real
+
                 dd("Error de API:", $response->status(), $response->json());
             }
 
             return view('layouts.users.update', [
-                // CORRECCIÓN 3: Pasamos el array de datos, no el objeto de respuesta
                 'users' => $response->json()
             ]);
         } catch (\Exception $e) {
@@ -125,6 +123,26 @@ class UserController extends Controller
             }
 
             return redirect()->route('users.index')->with('success', 'Usuario restaurado');
+        } catch (\Exception $e) {
+            dd("Excepción capturada:", $e->getMessage());
+        }
+    }
+    public function inactive()
+    {
+        try {
+            $response = Http::withToken(session('access_token'))
+                ->acceptJson()
+                ->get(config('services.academy_api.url') . '/api/users/inactive');
+
+            if (!$response->successful()) {
+                dd("Error de API:", $response->status(), $response->json());
+            }
+
+            $data = $response->json();
+
+            return view('layouts.partials.dashboard-content', [
+                'users' => $data['data']['data'] // Aquí es donde viven los registros reales
+            ]);
         } catch (\Exception $e) {
             dd("Excepción capturada:", $e->getMessage());
         }
