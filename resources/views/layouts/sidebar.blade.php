@@ -4,11 +4,11 @@
               <!--begin::Brand Link-->
               <a href="{{ route('dashboard') }}" class="brand-link">
                   <!--begin::Brand Image-->
-                  <img src="{{ asset('assets/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                  <img src="{{ asset('assets/img/jake.jpg') }}" alt="AdminLTE Logo"
                       class="brand-image opacity-75 shadow" />
                   <!--end::Brand Image-->
                   <!--begin::Brand Text-->
-                  <span class="brand-text fw-light">Academy Dev</span>
+                  <span class="brand-text fw-light">Felipeneitor</span>
                   <!--end::Brand Text-->
               </a>
               <!--end::Brand Link-->
