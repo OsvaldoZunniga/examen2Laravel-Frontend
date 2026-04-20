@@ -19,19 +19,7 @@
                         </a>
                     </div>
 
-                    <div class="col-md-6">
-                        <a href="" class="btn btn-success w-100 py-2">
-                            <i class="bi bi-journal-plus me-2"></i>
-                            Registrar curso
-                        </a>
-                    </div>
 
-                    <div class="col-md-6">
-                        <a href="" class="btn btn-warning w-100 text-white py-2">
-                            <i class="bi bi-clipboard-plus me-2"></i>
-                            Registrar matrícula
-                        </a>
-                    </div>
 
                     <div class="col-md-6">
                         <a href="" class="btn btn-info w-100 text-white py-2">

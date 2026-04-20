@@ -22,13 +22,13 @@ class UserController extends Controller
                     'password' => $request->password,
                 ]);
 
-            // Si la API falla, lanzamos una excepción manualmente para entrar al catch
+
             if (!$response->successful()) {
-                // Esto nos permitirá ver qué error lanza el BACKEND
                 dd("Error de API:", $response->status(), $response->json());
             }
 
-            return back()->with('success', 'Usuario creado');
+            return redirect()
+                ->route('dashboard.admin')->with('success', 'Usuario creado');
         } catch (\Exception $e) {
             dd("Excepción capturada:", $e->getMessage());
         }
