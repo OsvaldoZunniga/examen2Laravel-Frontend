@@ -149,7 +149,7 @@
                      <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                          <img src="{{ asset('assets/img/userProfile.jpg') }}" class="user-image rounded-circle shadow"
                              alt="User Image" />
-                         <span class="d-none d-md-inline">Dayans Chacón</span>
+                         <span class="d-none d-md-inline">Felipe</span>
                      </a>
                      <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                          <!--begin::User Image-->
@@ -157,8 +157,8 @@
                              <img src="{{ asset('assets/img/userProfile.jpg') }}" class="rounded-circle shadow"
                                  alt="User Image" />
                              <p>
-                                 Dayans Chacón - Admin
-                                 <small>Member since Nov. 2023</small>
+                                 Felipe - !Admin
+                                 <small>Member since Nov. 1969</small>
                              </p>
                          </li>
                          <!--end::User Image-->

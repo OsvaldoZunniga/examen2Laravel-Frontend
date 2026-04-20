@@ -36,7 +36,7 @@ return [
     ],
 
     'academy_api' => [
-        'url' => env('ACADEMY_API_URL'),
+        'url' => env('API_URL'),
     ],
 
 ];

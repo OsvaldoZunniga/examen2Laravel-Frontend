@@ -102,7 +102,8 @@
                                 </div>
                                 <!--end::Header-->
                                 <!--begin::Form-->
-                                <form class="needs-validation" novalidate>
+                                <form action="{{route('users.store')}}" method="post" class="needs-validation" novalidate>
+                                    @csrf
                                     <!--begin::Body-->
                                     <div class="card-body">
                                         <!--begin::Row-->
@@ -111,7 +112,7 @@
                                             <div class="col-md-6">
                                                 <label for="validationCustom01" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" id="validationCustom01"
-                                                    required />
+                                                    required value="Pingoc" />
                                             </div>
                                             <!--end::Col-->
 
@@ -122,6 +123,7 @@
                                                     <span class="input-group-text" id="inputGroupPrepend">@</span>
                                                     <input type="email" class="form-control"
                                                         id="validationCustomUsername"
+                                                        value="pingoc@gmail.com"
                                                         aria-describedby="inputGroupPrepend" required />
                                                     <div class="invalid-feedback">Ingrese el correo electrónico</div>
                                                 </div>
@@ -131,16 +133,23 @@
                                             <div class="col-md-6">
                                                 <label for="validationCustom03" class="form-label">Teléfono</label>
                                                 <input type="text" class="form-control" id="validationCustom03"
-                                                    required />
+                                                    required value="77777777" />
                                                 <div class="invalid-feedback">Ingresar número telefónico.</div>
                                             </div>
                                             <!--end::Col-->
-
+                                            <div>
+                                                <label class="form-label" for="role">Roles</label>
+                                                <select class="form-select" name="role_id" id="role">
+                                                    <option value="1">Admin</option>
+                                                    <option value="2">Operador</option>
+                                                    <option value="3">Driver</option>
+                                                </select>
+                                            </div>
                                             <!--begin::Col-->
                                             <div class="col-md-6">
                                                 <label for="validationCustom05" class="form-label">Contraseña</label>
                                                 <input type="text" class="form-control" id="validationCustom05"
-                                                    required />
+                                                    required value="12345678" />
                                                 <div class="invalid-feedback">Cree una contraseña.</div>
                                             </div>
                                             <!--end::Col-->
@@ -153,6 +162,15 @@
                                         <button class="btn btn-info" type="submit">Registrar</button>
                                     </div>
                                     <!--end::Footer-->
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif
                                 </form>
                                 <!--end::Form-->
                                 <!--begin::JavaScript-->

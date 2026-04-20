@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\UserController;
 
 
 /* Route::get('/', function () {
@@ -74,3 +75,5 @@ Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('c
 Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::patch('/courses/{course}/restore', [CourseController::class, 'restore'])->name('courses.restore');
+
+Route::post('/users/register', [UserController::class, 'store'])->name('users.store');

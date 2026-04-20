@@ -51,8 +51,9 @@ class AuthController extends Controller
                     'email' => 'El usuario no tiene un rol válido para ingresar al sistema.',
                 ])->onlyInput('email'),
             };
-
         } catch (RequestException $e) {
+            dd($e);
+
             $response = $e->getResponse();
 
             if ($response) {
