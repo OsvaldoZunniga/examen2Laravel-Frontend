@@ -75,13 +75,11 @@ class UserController extends Controller
         try {
             $response = Http::withToken(session('access_token'))
                 ->acceptJson()
-                // CORRECCIÓN: Usar comillas dobles " " y no ` `
                 ->put(config('services.academy_api.url') . "/api/users/{$request->id}", [
                     'name' => $request->name,
                     'email' => $request->email,
                     'telephone' => $request->telephone,
                     'role_id' => $request->role_id,
-                    'password' => $request->password, // El backend debe ignorarlo si viene vacío
                 ]);
 
             if (!$response->successful()) {

@@ -112,7 +112,7 @@
                                             <div class="col-md-6">
                                                 <label for="validationCustom01" class="form-label">Nombre</label>
                                                 <input type="text" class="form-control" id="validationCustom01" name="name"
-                                                    required value="Pingoc" />
+                                                    required />
                                             </div>
                                             <!--end::Col-->
 
@@ -124,7 +124,7 @@
                                                     <input type="email" class="form-control"
                                                         name="email"
                                                         id="validationCustomUsername"
-                                                        value="pingoc@gmail.com"
+
                                                         aria-describedby="inputGroupPrepend" required />
                                                     <div class="invalid-feedback">Ingrese el correo electrónico</div>
                                                 </div>
@@ -134,7 +134,7 @@
                                             <div class="col-md-6">
                                                 <label for="validationCustom03" class="form-label">Teléfono</label>
                                                 <input type="text" class="form-control" id="validationCustom03"
-                                                    required value="77777777" name="telephone" />
+                                                    required name="telephone" />
                                                 <div class="invalid-feedback">Ingresar número telefónico.</div>
                                             </div>
                                             <!--end::Col-->
@@ -151,7 +151,7 @@
                                                 <label for="validationCustom05" class="form-label">Contraseña</label>
                                                 <input type="text" class="form-control" id="validationCustom05"
                                                     name="password"
-                                                    required value="12345678" />
+                                                    required />
                                                 <div class="invalid-feedback">Cree una contraseña.</div>
                                             </div>
                                             <!--end::Col-->
